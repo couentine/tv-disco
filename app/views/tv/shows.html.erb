@@ -1,0 +1,21 @@
+<h2>Details for @show[</h2>
+
+
+ <p><%= @show %></p>
+
+ <div class="search-results"> 
+    <table class="table table-bordered table-striped ">
+        <% @show[:results].each do |tv|  %> <!--decide what info to display-->
+        <thead>
+                <tr>
+                    <th scope="col">TV Show</th>
+                    <th scope="col">Popularity</th>
+                    <th scope="col">First Air Date</th>
+                    <th scope="col">Overview</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Vote Count</th>
+                </tr>
+            </thead>
+        <% end %>
+    </table>
+</div> 

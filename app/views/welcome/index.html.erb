@@ -1,0 +1,53 @@
+<br />
+<div class="jumbotron container">
+  <h1>Tv Discovery</h1>
+    <p>With this app you will discover the more populare tv show</p>
+</div>
+
+ <div class="container">
+  <div class="row">
+    <h3>Search for a TV show here!</h3>
+        <!--<div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text glyphicon glyphicon=search" aria-hidden="true"></span>
+        </div>
+        <input type="text" class="form-control" placeholder="Search for a TV show" aria-label="Search" aria-describedby="basic-addon1">-->
+        <%= form_tag("/tv/search_result", method: "get") do %>
+            <%= label_tag(:search, "Search for:") %> <!--q variable represents the string entered in the Search box-->
+            <%= text_field_tag(:search) %>
+            <%= submit_tag("Search") %>
+        <% end %>
+    </div><br />
+    <%#= link_to "Search", tv_shows_results_path, class: 'btn btn-success'%>
+  </div><br />
+
+   <div class="row">
+    <h3>Popular TV Shows</h3>
+    <div class="popular-shows"> 
+        <table class="table table-bordered table-striped ">
+            <% @top[:results].each do |tv|  %>
+            <thead>
+                <tr>
+                    <th scope="col">TV Show</th>
+                    <th scope="col">Popularity</th>
+                    <th scope="col">First Air Date</th>
+                    <th scope="col">Synopsis</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Vote Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= tv[:original_name]%></td>
+                    <td><%= tv[:popularity]%></td>
+                    <td><%= tv[:first_air_date]%></td>
+                    <td><%= tv[:overview]%></td>
+                    <td><%= tv[:vote_average]%></td>
+                    <td><%= tv[:vote_count]%></td>
+                </tr>
+            </tbody>
+            <% end %>
+        </table>
+    </div>
+  </div>
+</div>

@@ -27,9 +27,13 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'bootsnap', require: false
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+
+#API gem
+gem 'httparty'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

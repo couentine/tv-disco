@@ -1,0 +1,33 @@
+<h1>Tv Discovery</h1>
+<h2>Search results for <%= @search.capitalize %></h2>
+
+  <div class="search-results"> 
+    <table class="table table-bordered table-striped ">
+        <% @results[:results].each do |tv|  %>
+            <thead>
+                <tr>
+                    <th scope="col">TV Show</th>
+                    <th scope="col">Popularity</th>
+                    <th scope="col">First Air Date</th>
+                    <th scope="col">Overview</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Vote Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= tv[:original_name] %></td>
+                    <td><%= tv[:popularity]%></td>
+                    <td><%= tv[:first_air_date]%></td>
+                    <td><%= tv[:overview]%></td>
+                    <td><%= tv[:vote_average]%></td>
+                    <td><%= tv[:vote_count]%></td>
+                    <td> <%= form_tag("/tv/shows", method: "get") do %>
+                        <%= hidden_field_tag(tv[:id]) %> <!--captures TV show ID number to link to individual show page-->
+                        <%= submit_tag("View") %>
+                    <% end %></td>
+                </tr>
+            </tbody>
+        <% end %>
+    </table>
+</div> 
