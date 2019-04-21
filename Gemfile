@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', require: false
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'yarn', '~> 0.1.1'
 
 #API gem
 gem 'httparty'
