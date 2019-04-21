@@ -7,7 +7,7 @@
         </div>
         <input type="text" class="form-control" placeholder="Search for a TV show" aria-label="Search" aria-describedby="basic-addon1">-->
         <%= form_tag("/tv/search_result", method: "get") do %>
-            <%= label_tag(:search, "Search for:") %> <!--q variable represents the string entered in the Search box-->
+            <%= label_tag(:search, "Search for:") %> <!--search variable represents the string entered in the Search box-->
             <%= text_field_tag(:search) %>
             <%= submit_tag("Search") %>
         <% end %>
@@ -19,7 +19,7 @@
 
 <div class="container">
     <div class="panel panel-default">
-        <h1 class="panel-body text-center pt-5 pb-4"><%= @shows[:name].upcase %></h1>
+        <h1 class="panel-body text-center pt-5 pb-4"><%= @shows[:name].capitalize %></h1>
     </div>
 </div>
 
