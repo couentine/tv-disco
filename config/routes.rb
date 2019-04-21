@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   get 'tv/shows'
 
+  get 'tv/error'
+
 end

@@ -1,21 +1,72 @@
-<h2>Details for @show[</h2>
-
-
- <p><%= @show %></p>
-
- <div class="search-results"> 
-    <table class="table table-bordered table-striped ">
-        <% @show[:results].each do |tv|  %> <!--decide what info to display-->
-        <thead>
-                <tr>
-                    <th scope="col">TV Show</th>
-                    <th scope="col">Popularity</th>
-                    <th scope="col">First Air Date</th>
-                    <th scope="col">Overview</th>
-                    <th scope="col">Rating</th>
-                    <th scope="col">Vote Count</th>
-                </tr>
-            </thead>
+<div class="container">
+  <div class="row">
+    <h3>Search for an other TV show here!</h3>
+        <!--<div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text glyphicon glyphicon=search" aria-hidden="true"></span>
+        </div>
+        <input type="text" class="form-control" placeholder="Search for a TV show" aria-label="Search" aria-describedby="basic-addon1">-->
+        <%= form_tag("/tv/search_result", method: "get") do %>
+            <%= label_tag(:search, "Search for:") %> <!--q variable represents the string entered in the Search box-->
+            <%= text_field_tag(:search) %>
+            <%= submit_tag("Search") %>
         <% end %>
-    </table>
-</div> 
+    </div><br />
+    <%#= link_to "Search", tv_shows_results_path, class: 'btn btn-success'%>
+  </div><br />
+
+
+
+<div class="container">
+    <div class="panel panel-default">
+        <h1 class="panel-body text-center pt-5 pb-4"><%= @shows[:name].upcase %></h1>
+    </div>
+</div>
+
+<div class="container show-overview mt-3">
+    <h2 class="text-center pt-3 pb-3">Synopsis</h2>
+    <p class="text-center lead mb-0"><%= @shows[:overview]%></p>
+</div>
+
+<section class="features-icons bg-light text-center mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex">
+                        <i class="icon-user m-auto text-primary"></i>
+                    </div>
+                    <h3>Created By</h3>
+                    <p class="lead mb-0"><% creator = @shows[:created_by]%><%= creator[0].values[1]%></p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex">
+                        <i class="icon-info m-auto text-primary"></i>
+                    </div>
+                    <h3>Genre</h3>
+                    <p class="lead mb-0"><% genre = @shows[:genres]%><%= genre[0].values[1] %></p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex">
+                        <i class="icon-grid m-auto text-primary"></i>
+                    </div>
+                    <h3>Number of Seasons</h3>
+                    <p class="lead mb-0"><%= @shows[:number_of_seasons]%></p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex">
+                        <i class="icon-layers m-auto text-primary"></i>
+                    </div>
+                    <h3>Number of Episodes</h3>
+                    <p class="lead mb-0"><%= @shows[:number_of_episodes]%></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
