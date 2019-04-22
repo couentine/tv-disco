@@ -1,5 +1,5 @@
 <div class="jumbotron container">
-    <p>With this app you will discover the more populare tv show</p>
+    <p>With this app you will discover the most popular tv shows</p>
 </div>
 
  <div class="container">
@@ -27,21 +27,25 @@
             <thead>
                 <tr>
                     <th scope="col">TV Show</th>
+                    <th scope="col"></th>
                     <th scope="col">Popularity</th>
                     <th scope="col">First Air Date</th>
                     <th scope="col">Synopsis</th>
                     <th scope="col">Rating</th>
-                    <th scope="col">Vote Count</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><%= tv[:original_name]%></td>
+                    <td><img src="<%= 'http://image.tmdb.org/t/p/w185/'+tv[:poster_path]%>"></td>
                     <td><%= tv[:popularity]%></td>
                     <td><%= tv[:first_air_date]%></td>
                     <td><%= tv[:overview]%></td>
                     <td><%= tv[:vote_average]%></td>
-                    <td><%= tv[:vote_count]%></td>
+                    <td> <%= form_tag("/tv/shows", method: "get") do %>
+                        <%= hidden_field_tag(tv[:id]) %> <!--captures TV show ID number to link to individual show page-->
+                        <%= submit_tag("View") %>
+                        <%end%>
                 </tr>
             </tbody>
             <% end %>
