@@ -23,6 +23,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'httparty'
 gem 'rest-client'
 gem 'addressable'
+gem 'bootsnap', require: false
 
  # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
