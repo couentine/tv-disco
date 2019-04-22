@@ -1,3 +1,5 @@
+require 'addressable/uri'
+
 class TvController < ApplicationController
 
     def initialize
