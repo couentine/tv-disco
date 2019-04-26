@@ -4,4 +4,5 @@ class ApplicationRecord < ActiveRecord::Base
   def self.search(search)
     where("name ILIKE ? OR specialty ILIKE ?", "%#{search.downcase}%", "%#{search.downcase}%")
   end
+  
 end
