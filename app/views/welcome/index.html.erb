@@ -1,5 +1,5 @@
 <div class="jumbotron container">
-    <p>With this app you will discover the most popular tv shows</p>
+    <p>With this app you will discover the most popular TV shows</p>
 </div>
 
  <div class="container">
@@ -42,7 +42,7 @@
                     <td><%= tv[:first_air_date]%></td>
                     <td><%= tv[:overview]%></td>
                     <td><%= tv[:vote_average]%></td>
-                    <td> <%= form_tag("/tv/shows", method: "get") do %>
+                    <td> <%= form_tag("/tv/show", method: "get") do %>
                         <%= hidden_field_tag(tv[:id]) %> <!--captures TV show ID number to link to individual show page-->
                         <%= submit_tag("View") %>
                         <%end%>

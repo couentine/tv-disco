@@ -19,14 +19,14 @@
 
 <div class="container">
     <div class="panel panel-default">
-        <h1 class="panel-body text-center pt-5 pb-4"><%= @shows[:name].capitalize %></h1>
+        <h1 class="panel-body text-center pt-5 pb-4"><%= @show[:name].capitalize %></h1>
     </div>
 </div>
 
 <div class="container show-overview mt-3">
-    <img src="<%= 'http://image.tmdb.org/t/p/w185/'+@shows[:poster_path]%>">
+    <img src="<%= 'http://image.tmdb.org/t/p/w185/'+@show[:poster_path]%>">
     <h2 class="text-center pt-3 pb-3">Synopsis</h2>
-    <p class="text-center lead mb-0"><%= @shows[:overview]%></p>
+    <p class="text-center lead mb-0"><%= @show[:overview]%></p>
 </div>
 
 <section class="features-icons bg-light text-center mt-5">
@@ -37,8 +37,6 @@
                     <div class="features-icons-icon d-flex">
                         <i class="icon-user m-auto text-primary"></i>
                     </div>
-                    <h3>Created By</h3>
-                    <p class="lead mb-0"><% creator = @shows[:created_by]%><%= creator[0].values[1]%></p>
                 </div>
             </div>
             <div class="col">
@@ -47,7 +45,7 @@
                         <i class="icon-info m-auto text-primary"></i>
                     </div>
                     <h3>Genre</h3>
-                    <p class="lead mb-0"><% genre = @shows[:genres]%><%= genre[0].values[1] %></p>
+                    <p class="lead mb-0"><% genre = @show[:genres]%><%= genre[0].values[1] %></p>
                 </div>
             </div>
             <div class="col">
@@ -56,7 +54,7 @@
                         <i class="icon-grid m-auto text-primary"></i>
                     </div>
                     <h3>Number of Seasons</h3>
-                    <p class="lead mb-0"><%= @shows[:number_of_seasons]%></p>
+                    <p class="lead mb-0"><%= @show[:number_of_seasons]%></p>
                 </div>
             </div>
             <div class="col">
@@ -65,7 +63,7 @@
                         <i class="icon-layers m-auto text-primary"></i>
                     </div>
                     <h3>Number of Episodes</h3>
-                    <p class="lead mb-0"><%= @shows[:number_of_episodes]%></p>
+                    <p class="lead mb-0"><%= @show[:number_of_episodes]%></p>
                 </div>
             </div>
         </div>

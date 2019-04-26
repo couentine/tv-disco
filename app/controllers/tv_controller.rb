@@ -1,10 +1,7 @@
-require 'addressable/uri'
-
 class TvController < ApplicationController
 
-    def initialize
-    @search_result
-    @shows
+  def initialize
+
   end
 
    #To render search results page
@@ -20,7 +17,7 @@ class TvController < ApplicationController
   end 
 
    #To render individual TV show view page
-  def shows
+  def show
     id = params.keys[1] # Query variable is the ID of the TV show that the user clicks on.
 
      #template = Addressable::Template.new('https://api.themoviedb.org/3/tv/{?query*}?api_key=fb6a1d3f38c3d97f67df6d141f936f29&language=en-US')
@@ -29,9 +26,9 @@ class TvController < ApplicationController
 
 
      url = Addressable::URI.parse("https://api.themoviedb.org/3/tv/#{id}?api_key=fb6a1d3f38c3d97f67df6d141f936f29&language=en-US")
-    response = HTTParty.get(url)
+     response = HTTParty.get(url)
 
-     @shows = JSON.parse(response.body, symbolize_names: true) 
+     @show = JSON.parse(response.body, symbolize_names: true) 
   end
 end
 

@@ -12,7 +12,7 @@
             <%= submit_tag("Search") %>
         <% end %>
     </div><br />
-    <%#= link_to "Search", tv_shows_results_path, class: 'btn btn-success'%>
+    <%#= link_to "Search", tv_show_results_path, class: 'btn btn-success'%>
   </div><br />
 
 
@@ -39,7 +39,7 @@
                     <td><%= tv[:first_air_date]%></td>
                     <td><%= tv[:overview]%></td>
                     <td><%= tv[:vote_average]%></td>
-                    <td> <%= form_tag("/tv/shows", method: "get") do %>
+                    <td> <%= form_tag("/tv/show", method: "get") do %>
                         <%= hidden_field_tag(tv[:id]) %> <!--captures TV show ID number to link to individual show page-->
                         <%= submit_tag("View") %>
                     <% end %></td>

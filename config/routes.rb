@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'tv/search_result'
 
-  get 'tv/shows'
+  get 'tv/show'
 
   get 'tv/error'
 
