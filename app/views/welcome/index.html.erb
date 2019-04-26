@@ -10,14 +10,19 @@
             <span class="input-group-text glyphicon glyphicon=search" aria-hidden="true"></span>
         </div>
         <input type="text" class="form-control" placeholder="Search for a TV show" aria-label="Search" aria-describedby="basic-addon1">-->
-        <%= form_tag("/tv/search_result", method: "get") do %>
-            <%= label_tag(:search, "Search for:") %> <!--q variable represents the string entered in the Search box-->
-            <%= text_field_tag(:search) %>
-            <%= submit_tag("Search") %>
-        <% end %>
-    </div><br />
-    <%#= link_to "Search", tv_shows_results_path, class: 'btn btn-success'%>
-  </div><br />
+
+<center>
+  <!-- Search bar is working on local but not on heroku -->
+
+<%= form_tag("/tv/search_result", method: "get") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Tv Shows" %>
+    <%= submit_tag "Search", :name => nil %>
+    <% if @show.blank? %>
+  <h4>There are no Show containing the term <%= params[:search] %>.</h4>
+<% end %>
+<% end %>
+</center>
+<br>
 
    <div class="row">
     <h3>Popular TV Shows</h3>
