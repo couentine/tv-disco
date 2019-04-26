@@ -17,9 +17,6 @@
 <%= form_tag("/tv/search_result", method: "get") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Tv Shows" %>
     <%= submit_tag "Search", :name => nil %>
-    <% if @show.blank? %>
-  <h4>There are no Show containing the term <%= params[:search] %>.</h4>
-<% end %>
 <% end %>
 </center>
 <br>
