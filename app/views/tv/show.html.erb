@@ -18,10 +18,10 @@
 <center>
   <!-- Search bar is working on local but not on heroku -->
 
-<%= form_tag(tv_search_result_path), :method => "get", id: "search-form") do %>
+<%= form_tag("/tv/search_result", method: "get") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Tv Shows" %>
     <%= submit_tag "Search", :name => nil %>
-    <% if @@show.blank? %>
+    <% if @show.blank? %>
   <h4>There are no Show containing the term <%= params[:search] %>.</h4>
 <% end %>
 <% end %>
