@@ -6,7 +6,7 @@ class TvController < ApplicationController
   end
 
   def initialize
-
+    super
   end
 
    #To render search results page

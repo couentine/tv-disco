@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def initialize
-
+    super
   end
 
    def index
