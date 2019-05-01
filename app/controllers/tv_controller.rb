@@ -1,5 +1,10 @@
 class TvController < ApplicationController
 
+  def index
+    response = HTTParty.get("https://api.themoviedb.org/3/tv/popular?api_key=fb6a1d3f38c3d97f67df6d141f936f29&language=en-US")
+    @top = JSON.parse(response.body, symbolize_names: true) 
+  end
+
   def initialize
 
   end
@@ -8,12 +13,10 @@ class TvController < ApplicationController
   def search_result
     @search = params[:search]
     query = params[:search] #Query variable is the string a user enters in the search bar.
-    url = Addressable::URI.parse('https://api.themoviedb.org/3/search/tv?api_key=fb6a1d3f38c3d97f67df6d141f936f29&language=en-US&')
+    url = Addressable::URI.parse('https://api.themoviedb.org/3/search/tv?api_key=fb6a1d3f38c3d97f67df6d141f936f29&language=en-US')
     url.query_values = url.query_values.merge(query: query)
     response = HTTParty.get(url)
-
     @results = JSON.parse(response.body, symbolize_names: true) 
-
   end 
 
    #To render individual TV show view page
