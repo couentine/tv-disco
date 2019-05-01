@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <h3>Search for an other TV show here!</h3>
+
         <!--<div class="input-group mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text glyphicon glyphicon=search" aria-hidden="true"></span>
@@ -9,13 +9,13 @@
 
 <center>
   <!-- Search bar is working on local but not on heroku -->
-
+    <h3>Search for an other TV show here!</h3>
 <%= form_tag("/tv/search_result", method: "get") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Tv Shows" %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 </center>
-<br>
+</div></br>
 
 
 <div class="container">
@@ -25,7 +25,7 @@
 </div>
 
 <div class="container show-overview mt-3">
-    <img src="<%= 'http://image.tmdb.org/t/p/w185/'+@show[:poster_path]%>">
+    <div class="text-center"> <img src="<%= 'http://image.tmdb.org/t/p/w185/'+@show[:poster_path]%>"></div>
     <h2 class="text-center pt-3 pb-3">Synopsis</h2>
     <p class="text-center lead mb-0"><%= @show[:overview]%></p>
 </div>

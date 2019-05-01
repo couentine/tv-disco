@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <h3>Search for a TV show here!</h3>
+
         <!--<div class="input-group mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text glyphicon glyphicon=search" aria-hidden="true"></span>
@@ -9,7 +9,7 @@
 
 <center>
   <!-- Search bar is working on local but not on heroku -->
-
+    <h3>Search for a TV show here!</h3>
 <%= form_tag("/tv/search_result", method: "get") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Tv Shows" %>
     <%= submit_tag "Search", :name => nil %>
@@ -23,8 +23,8 @@
 <h2>Search results for <%= @search.capitalize %></h2>
 
   <div class="search-results"> 
-    <table class="table table-bordered table-striped ">
-        <% @results[:results].each do |tv|  %>
+    <table class="table table-hover ">
+ 
             <thead>
                 <tr>
                     <th scope="col">TV Show</th>
@@ -37,7 +37,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                
+             <% @results[:results].each do |tv|  %>
+             <tr>
                     <td><%= tv[:original_name] %></td>
                     <td><img src='
                         <% if tv[:poster_path].nil? %>

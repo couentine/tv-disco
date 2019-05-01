@@ -14,14 +14,13 @@
   </head>
 
   <body>
-
-    <nav class="navbar navbar-light bg-light static-top">
-      <div class="container">
-        <a class="navbar-brand"><%= link_to "Home", root_path %></a>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+       <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand"href="<%= root_path %>">Tv Discovery</a>
       </div>
+    </div>
     </nav>
-
-    <h1>Tv Discovery</h1>
     <%= yield %>
   </body>
 </html>

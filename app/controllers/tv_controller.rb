@@ -27,7 +27,6 @@ class TvController < ApplicationController
     #url = template.expand({"query" => id})
     #response = HTTParty.get(url)
 
-
      url = Addressable::URI.parse("https://api.themoviedb.org/3/tv/#{id}?api_key=fb6a1d3f38c3d97f67df6d141f936f29&language=en-US")
      response = HTTParty.get(url)
 
