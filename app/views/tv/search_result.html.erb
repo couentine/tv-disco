@@ -33,12 +33,18 @@
                     <th scope="col">First Air Date</th>
                     <th scope="col">Overview</th>
                     <th scope="col">Rating</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><%= tv[:original_name] %></td>
-                    <td><img src='<%#= 'http://image.tmdb.org/t/p/w185/'+tv[:poster_path]%>'></td>
+                    <td><img src='
+                        <% if tv[:poster_path].nil? %>
+                            <p>Image not found</p>
+                        <%else%>
+                   <%= 'http://image.tmdb.org/t/p/w185/'+tv[:poster_path]%>'
+                   <%end%> alt=""></td>
                     <td><%= tv[:popularity]%></td>
                     <td><%= tv[:first_air_date]%></td>
                     <td><%= tv[:overview]%></td>
