@@ -37,8 +37,11 @@
                 </tr>
             </thead>
             <tbody>
-                
+            <%if @results[:results].nil?%>
+               <center> <h1> Please Write something or it's not going to work</h1></center>
+            <%else%>
              <% @results[:results].each do |tv|  %>
+  
              <tr>
                     <td><%= tv[:original_name] %></td>
                     <td><img src='
@@ -56,6 +59,7 @@
                         <%= submit_tag("View") %>
                     <% end %></td>
                 </tr>
+                <%end%>
             </tbody>
         <% end %>
     </table>
