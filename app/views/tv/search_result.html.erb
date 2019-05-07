@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-
-    <h3>Search for another TV show here!</h3>
-    <%= form_tag("/tv/search_result", method: "get") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Tv Shows" %>
-    <%= submit_tag "Search", :class =>"btn btn-info",  :name => nil %>
-<% end %>
-</center>
-<br>
+    <center>
+        <h3>Search for another TV show here!</h3>
+        <%= form_tag("/tv/search_result", method: "get") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Tv Shows" %>
+        <%= submit_tag "Search", :class =>"btn btn-info",  :name => nil %>
+    <% end %>
+    </center>
+    <br>
   </div><br />
 
 
