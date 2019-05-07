@@ -5,14 +5,7 @@
  <div class="container">
   <div class="row">
 
-        <!--<div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text glyphicon glyphicon=search" aria-hidden="true"></span>
-        </div>
-        <input type="text" class="form-control" placeholder="Search for a TV show" aria-label="Search" aria-describedby="basic-addon1">-->
-
 <center>
-  <!-- Search bar is working on local but not on heroku -->
     <h3>Search for a TV show here!</h3>
 <%= form_tag("/tv/search_result", method: "get") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Tv Shows" %>
