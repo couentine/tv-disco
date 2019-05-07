@@ -9,10 +9,10 @@
 
 <center>
   <!-- Search bar is working on local but not on heroku -->
-    <h3>Search for a TV show here!</h3>
-<%= form_tag("/tv/search_result", method: "get") do %>
+    <h3>Search for another TV show here!</h3>
+    <%= form_tag("/tv/search_result", method: "get") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Tv Shows" %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= submit_tag "Search", :class =>"btn btn-info",  :name => nil %>
 <% end %>
 </center>
 <br>
@@ -30,7 +30,7 @@
                     <th scope="col">TV Show</th>
                     <th scope="col"></th>
                     <th scope="col">Popularity</th>
-                    <th scope="col">First Air Date</th>
+                    <th scope="col">Air Date</th>
                     <th scope="col">Overview</th>
                     <th scope="col">Rating</th>
                     <th scope="col"></th>

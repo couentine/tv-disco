@@ -1,5 +1,5 @@
 <div class="jumbotron container">
-    <p>With this app you will discover the most popular TV shows</p>
+  <center>  <p>With this app you will discover the most popular TV shows</p></center>
 </div>
 
  <div class="container">
@@ -16,7 +16,7 @@
     <h3>Search for a TV show here!</h3>
 <%= form_tag("/tv/search_result", method: "get") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Tv Shows" %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= submit_tag "Search", :class => "btn btn-info", :name => nil %>
 <% end %>
 </center>
 <br>
@@ -40,6 +40,7 @@
             <tbody>
                 <tr>
                  <% @top[:results].each do |tv|  %>
+
                     <td><%= tv[:original_name]%></td>
                     <td><img src="<%= 'http://image.tmdb.org/t/p/w185/'+tv[:poster_path]%>"></td>
                     <td><%= tv[:popularity]%></td>
@@ -52,7 +53,8 @@
                         <%end%>
                 </tr>
             </tbody>
-            <% end %>
+
+            <%end%>
         </table>
     </div>
   </div>

@@ -35,6 +35,7 @@ gem 'bootsnap', require: false
   gem 'rspec-rails', '~> 3.7'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
+  gem 'capybara'
 end
 
  group :development do

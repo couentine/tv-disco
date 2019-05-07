@@ -1,3 +1,4 @@
+<div class="show">
 <div class="container">
   <div class="row">
 
@@ -7,13 +8,13 @@
         </div>
         <input type="text" class="form-control" placeholder="Search for a TV show" aria-label="Search" aria-describedby="basic-addon1">-->
 
-<center>
-  <!-- Search bar is working on local but not on heroku -->
-    <h3>Search for an other TV show here!</h3>
-<%= form_tag("/tv/search_result", method: "get") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Tv Shows" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
+    <center>
+      <!-- Search bar is working on local but not on heroku -->
+        <h3>Search for another TV show here!</h3>
+        <%= form_tag("/tv/search_result", method: "get") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Tv Shows" %>
+        <%= submit_tag "Search", :class => "btn btn-info", :name => nil %>
+    <% end %>
 </center>
 </div></br>
 
@@ -70,3 +71,4 @@
         </div>
     </div>
 </section>
+</div>
