@@ -13,16 +13,16 @@ Ruby on Rails and Bootstrap were chosen due to the project timeframe. The HTTPar
 
 ## Tests
 
+Tests are using Rspec and Capybara
+
 To run all specs:
 
+ - bundle install
  - With a little description of each spec (recommended): bundle exec rspec -fd spec
  - With minimized output: bundle exec rspec spec
 
 ## Start Test Server
 
-Tests are using Rspec and Capybara
-
- - bundle install
  - Rails s
  - Then http://localhost:3000/ in your browser
 
