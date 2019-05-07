@@ -10,6 +10,13 @@
     <br>
   </div><br />
 
+  <%if @results[:results].nil?%>
+     <center> 
+      <h1> Please Write something in the search bar or it's not going to work</h1>
+    </br>
+     <%= image_tag("giphy.gif", :alt => "rss feed") %>
+     </center>
+  <%else%>
 
 <h2>Search results for <%= @search.capitalize %></h2>
 
@@ -28,9 +35,7 @@
   </thead>
   <tbody>
        <!--Rescue from empty search-->
-  <%if @results[:results].nil?%>
-     <center> <h1> Please Write something in the search bar or it's not going to work</h1></center>
-  <%else%>
+
    <% @results[:results].each do |tv|  %>
 
    <tr>
